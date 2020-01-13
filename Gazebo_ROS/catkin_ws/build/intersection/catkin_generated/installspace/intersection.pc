@@ -1,0 +1,8 @@
+prefix=/home/maxwell/catkin_ws/install
+
+Name: intersection
+Description: Description of intersection
+Version: 0.0.0
+Cflags: -I/home/maxwell/catkin_ws/install/include
+Libs: -L/home/maxwell/catkin_ws/install/lib 
+Requires: 

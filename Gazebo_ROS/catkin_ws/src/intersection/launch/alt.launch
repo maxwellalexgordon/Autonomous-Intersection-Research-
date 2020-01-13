@@ -1,0 +1,88 @@
+<launch>
+
+
+    <!-- declare arg to be passed in -->
+    <arg name="naming" default="robo_9"/>
+    <arg name="vin" default="0"/>
+    <arg name="lane" default="0"/>
+    <arg name="speed" default="0"/>
+    <arg name="accel" default="0"/>
+    <arg name="length" default="0"/>
+    <arg name="width" default="0"/>
+    <arg name="turn" default="0"/>
+    <arg name="now" default="0"/>
+    <arg name="x_pos" default="0.0"/>
+    <arg name="y_pos" default="0.0"/>
+    <arg name="z_pos" default="0.0"/>
+    <arg name="yaw" default="0"/>
+
+
+
+
+
+
+    <param name="name" value="$(arg naming)"/>
+    <param name="vin" value="$(arg vin)"/>
+    <param name="lane" value="$(arg lane)"/>
+    <param name="speed" value="$(arg speed)"/>
+    <param name="accel" value="$(arg accel)"/>
+    <param name="length" value="$(arg length)"/>
+    <param name="width" value="$(arg width)"/>
+    <param name="turn" value="$(arg turn)"/>
+    <param name="now" value="$(arg now)"/>
+
+
+
+
+
+
+
+
+
+
+      <!-- change these defaults here, or as a cmd line arg, in order to turn off   -->
+      <!--   sensors that you aren't using, thus freeing up computational resources -->
+      <!--   and reducing storage space for your bagfiles -->
+      <arg name="front_laser_points" default="false"/>
+      <arg name="velodyne_points" default="false"/>
+      <arg name="camera_right" default="false"/>
+      <arg name="camera_left" default="false"/>
+      <!-- change these defaults here, to see further left with the velodyne   -->
+      <arg name="velodyne_max_angle" default="0.4"/>
+      <!-- change these defaults here, to see further right with the velodyne   -->
+      <arg name="velodyne_min_angle" default="-0.4"/>
+
+
+
+
+
+
+     <node pkg="intersection" name="$(arg naming)" type="CarNode.py" output="screen">   </node>
+
+
+
+
+
+<group ns="$(arg naming)">
+
+	<param name="robot_description"
+		 command="$(find xacro)/xacro.py
+		 '$(find catvehicle)/urdf/catvehicle.xacro'
+		 roboname:='$(arg naming)'
+		 front_laser_points:='$(arg front_laser_points)'
+		  velodyne_points:='$(arg velodyne_points)'
+		  camera_right:='$(arg camera_right)'
+		  camera_left:='$(arg camera_left)'
+		  velodyne_max_angle:='$(arg velodyne_max_angle)'
+		  velodyne_min_angle:='$(arg velodyne_min_angle)'" />
+
+    <include file="$(find catvehicle)/launch/catvehicle.launch">
+	    <arg name="robot_name" value="$(arg naming)"/>
+	    <arg name="init_pose" value="-x $(arg x_pos) -y $(arg y_pos) -z -0.29 -Y $(arg yaw)"/>
+	    <arg name="config_file" value="catvehicle_control.yaml"/>
+	</include>
+
+</group>
+
+
+</launch>

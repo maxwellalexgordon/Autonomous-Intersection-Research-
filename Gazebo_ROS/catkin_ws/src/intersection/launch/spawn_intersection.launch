@@ -1,0 +1,20 @@
+<launch>
+
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="/home/maxwell/catkin_ws/src/intersection/worlds/intersection_world.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+
+
+
+    <node pkg="intersection" name="simulation_node" type="simulator.py" output="screen"> </node>
+    <node pkg="intersection" name="server_node" type="InitialReservation_Server.py" output="screen"> </node>
+
+
+</launch>

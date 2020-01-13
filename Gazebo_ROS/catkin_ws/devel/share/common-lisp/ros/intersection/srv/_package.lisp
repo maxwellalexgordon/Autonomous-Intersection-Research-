@@ -1,0 +1,15 @@
+(cl:defpackage intersection-srv
+  (:use )
+  (:export
+   "CARCOMONE"
+   "<CARCOMONE-REQUEST>"
+   "CARCOMONE-REQUEST"
+   "<CARCOMONE-RESPONSE>"
+   "CARCOMONE-RESPONSE"
+   "CREATECAR"
+   "<CREATECAR-REQUEST>"
+   "CREATECAR-REQUEST"
+   "<CREATECAR-RESPONSE>"
+   "CREATECAR-RESPONSE"
+  ))
+

@@ -1,0 +1,12 @@
+int64 inOut
+int64 vin
+float64 speed
+float64 accel
+int64 enterTime
+int64 lane
+int64 turn
+float64 length
+float64 width
+---
+int64 requestedAccel
+int64 expectedTime

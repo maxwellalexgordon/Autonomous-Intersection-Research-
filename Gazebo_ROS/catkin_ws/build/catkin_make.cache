@@ -1,0 +1,2 @@
+catvehicle:cmdvel2gazebo:control_toolbox:intersection:obstaclestopper:sicktoolbox:sicktoolbox_wrapper:stepvel
+-DCATKIN_DEVEL_PREFIX=/home/maxwell/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/maxwell/catkin_ws/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/maxwell/catkin_ws/install
+
+Name: sicktoolbox
+Description: Description of sicktoolbox
+Version: 1.0.103
+Cflags: -I/home/maxwell/catkin_ws/install/include
+Libs: -L/home/maxwell/catkin_ws/install/lib -lSickLD -lSickLMS1xx -lSickLMS2xx
+Requires: 
