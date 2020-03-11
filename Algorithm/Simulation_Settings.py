@@ -11,6 +11,7 @@ class Simulation_Settings:
     inter_side_length = 200  #half of intersection, enter -> exit
     inter_size = 20          #size of middle of intersection. Black squares on 2d visual
 
+    inter_tolerance_time = 0.12; #not used
 
     inter_spawn_min = 600 # ms
     inter_spawn_max = 700
@@ -25,7 +26,7 @@ class Simulation_Settings:
 
 
 
-    experiment_num = 0
+    experiment_num = 1
 
     """
     experiment 0
